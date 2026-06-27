@@ -5,48 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ayoub Tighidet – Testeur QA</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 </head>
 <body>
 
 
-<nav>
-  <div class="logo">&lt;AYOUB TIGHIDET /&gt;</div>
-  <ul class="nav-links">
+<nav role="navigation" aria-label="Navigation principale">
+  <div class="logo" aria-label="Ayoub Tighidet - Accueil">&lt;AYOUB TIGHIDET /&gt;</div>
+  <ul class="nav-links" role="list">
     <li><a href="#apropos" data-i18n="nav_apropos">À propos</a></li>
-<li><a href="#competences" data-i18n="nav_competences">Compétences</a></li>
+    <li><a href="#competences" data-i18n="nav_competences">Compétences</a></li>
     <li><a href="#experience" data-i18n="nav_experience">Expérience</a></li>
     <li><a href="#formation" data-i18n="nav_formation">Formation</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
   </ul>
-  <div class="lang-switcher">
-    <button onclick="changerLangue('fr')" id="btn-fr" class="lang-btn active">FR</button>
-    <span style="color: var(--muted);">|</span>
-    <button onclick="changerLangue('en')" id="btn-en" class="lang-btn">EN</button>
+  <div class="lang-switcher" role="group" aria-label="Choix de la langue">
+    <button onclick="changerLangue('fr')" id="btn-fr" class="lang-btn active" aria-pressed="true" aria-label="Passer en français">FR</button>
+    <span aria-hidden="true" style="color: var(--muted);">|</span>
+    <button onclick="changerLangue('en')" id="btn-en" class="lang-btn" aria-pressed="false" aria-label="Switch to English">EN</button>
   </div>
 </nav>
-<section id="hero">
+
+<section id="hero" aria-labelledby="hero-heading">
   <div class="hero-left">
-    <h1>Ayoub <span>TIGHIDET</span></h1>
+    <h1 id="hero-heading">Ayoub <span>TIGHIDET</span></h1>
     <p class="hero-title" data-i18n="hero_title">Testeur QA</p>
-    <p class="hero-location" data-i18n="hero_location">📍 Île-de-France · Mobilité nationale</p>
-    <p data-i18n="hero_desc">Passionné par l'assurance qualité logicielle, spécialisé en tests fonctionnels, techniques et automatisés.
+    <p class="hero-location" data-i18n="hero_location">
+      <span aria-hidden="true">📍</span>
+      <span>Île-de-France · Mobilité nationale</span>
+    </p>
+    <p data-i18n="hero_desc">
+      Passionné par l'assurance qualité logicielle, spécialisé en tests fonctionnels, techniques et automatisés.
       Maîtrise de <strong>Postman, Selenium, Jira, Xray, Confluence</strong> et Elastic. Je cherche à rejoindre une
       équipe dynamique où je jouerai un rôle clé dans la fiabilité des produits.
     </p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary" data-i18n="hero_btn_contact">Me contacter →</a>
-      <a id="btn-cv"href="documents/CV/TIGHIDET_Ayoub_CV_CDI___French_version.pdf" class="btn-secondary" target="_blank" data-i18n="hero_btn_cv">⬇ Télécharger mon CV</a>
+      <a id="btn-cv" href="documents/CV/TIGHIDET_Ayoub_CV_CDI___French_version.pdf"
+         class="btn-secondary" target="_blank" rel="noopener noreferrer"
+         aria-label="Télécharger mon CV (PDF, nouvelle fenêtre)"
+         data-i18n="hero_btn_cv">⬇ Télécharger mon CV</a>
     </div>
     <div class="hero-socials">
-      <a href="https://www.linkedin.com/in/ayoub-tighidet/" data-i18n="hero_social_linkedin">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/ayoub-tighidet/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Profil LinkedIn d'Ayoub Tighidet (nouvelle fenêtre)"
+         data-i18n="hero_social_linkedin">LinkedIn</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="photo-wrap">
-      <img class="hero-photo" src="src/images/TIGHIDET Ayoub photo.jpeg" alt="Ayoub Tighidet" />
-      <span class="dispo-tag" data-i18n="dispo_tag">Disponible sept. 2026</span>
+      <img class="hero-photo"
+           src="src/images/TIGHIDET Ayoub photo.jpeg"
+           alt="Photo de profil d'Ayoub Tighidet, Testeur QA" />
+      <span class="dispo-tag" data-i18n="dispo_tag" aria-label="Disponible à partir de septembre 2026">Disponible sept. 2026</span>
     </div>
-    <div class="json-box">
+      <div class="json-box" aria-hidden="true">
       <div class="json-path">~/ayoub/stats.json</div>
       <div>{</div>
       <div>&nbsp;&nbsp;<span class="json-key">"position"</span>: <span class="json-str">"QA Engineer"</span>,</div>
@@ -54,165 +70,253 @@
       <div>&nbsp;&nbsp;<span class="json-key">"mobility"</span>: <span class="json-str">"open to relocation"</span>,</div>
       <div>&nbsp;&nbsp;<span class="json-key">"languages"</span>: <span class="json-val">6</span>,</div>
       <div>&nbsp;&nbsp;<span class="json-key">"available"</span>: <span class="json-val">september 2026</span></div>
-      <div>}
+      <div>}</div>
     </div>
   </div>
 </section>
 
-<section id="apropos">
-  <p class="section-label">01 / À PROPOS</p>
-  <h2>La qualité, c'est ma responsabilité</h2>
+
+<section id="apropos" aria-labelledby="titre-apropos">
+  <p class="section-label" aria-hidden="true">01 / À PROPOS</p>
+  <h2 id="titre-apropos">La qualité, c'est ma responsabilité</h2>
   <div class="about-grid">
     <div class="about-text">
       <p>Passionné par l'assurance qualité logicielle, je suis spécialisé en tests fonctionnels, techniques et automatisés.
-      J'ai acquis mon expérience dans deux environnements très différents : une <strong>néobanque française (Noelse)</strong>
-      en alternance et une start-up d'automates de recyclage <strong>(b:bot)</strong> en stage, , et une <strong>startup tech (estorik)</strong> en alternance.</p>
+      J'ai acquis mon expérience dans trois environnements très différents : une <strong>néobanque française (Noelse)</strong>
+      en alternance, une start-up d'automates de recyclage <strong>(b:bot)</strong> en stage, et une <strong>startup tech (êstorik)</strong> en alternance.</p>
       <p>Ce qui me distingue : ma capacité à <strong>documenter précisément</strong> les anomalies, à enrichir les rapports
       de bugs avec les données DevTools, et à automatiser les scénarios répétitifs avec <strong>Selenium et Claude Code</strong>.</p>
-      <p>Diplômé d'un Master en Numérique (Paris 8) et d'un Master Cultures & Métiers du Web (Gustave Eiffel),
+      <p>Diplômé d'un Master en Numérique (Paris 8) et d'un Master Cultures &amp; Métiers du Web (Gustave Eiffel),
       je joins ma passion pour l'informatique à mon métier d'ingénieur QA.</p>
-      <div class="tools-label">Outils maîtrisés</div>
-      <div class="tags">
-        <span class="tag">Jira</span><span class="tag">Xray</span><span class="tag">Confluence</span>
-        <span class="tag">Postman</span><span class="tag">Cypress</span><span class="tag">Selenium</span>
-        <span class="tag">Playwright</span><span class="tag">Elastic</span><span class="tag">Swagger</span>
-        <span class="tag">DevTools</span><span class="tag">TeamViewer</span><span class="tag">MixPanel</span>
-        <span class="tag">Claude Code</span>
-      </div>
+      <div class="tools-label" id="tools-label">Outils maîtrisés</div>
+      <ul class="tags" aria-labelledby="tools-label" role="list">
+        <li class="tag">Jira</li><li class="tag">Xray</li><li class="tag">Confluence</li>
+        <li class="tag">Postman</li><li class="tag">Cypress</li><li class="tag">Selenium</li>
+        <li class="tag">Playwright</li><li class="tag">Elastic</li><li class="tag">Swagger</li>
+        <li class="tag">DevTools</li><li class="tag">TeamViewer</li><li class="tag">MixPanel</li>
+        <li class="tag">Claude Code</li>
+      </ul>
     </div>
     <div class="about-cards">
       <div class="about-card">
-        <div class="card-icon">○</div>
-        <h4>Rigueur</h4>
+        <div class="card-icon" aria-hidden="true">○</div>
+        <h3>Rigueur</h3>
         <p>Plans de tests structurés, documentation précise de chaque anomalie via Jira et Xray.</p>
       </div>
       <div class="about-card">
-        <div class="card-icon">✦</div>
-        <h4>Bug Hunting</h4>
+        <div class="card-icon" aria-hidden="true">✦</div>
+        <h3>Bug Hunting</h3>
         <p>Identification et qualification des anomalies avec enrichissement via DevTools (Network).</p>
       </div>
       <div class="about-card">
-        <div class="card-icon">⟳</div>
-        <h4>Agile</h4>
+        <div class="card-icon" aria-hidden="true">⟳</div>
+        <h3>Agile</h3>
         <p>Intégré dans des équipes Scrum : daily, planning, sprint review, backlog QA.</p>
       </div>
       <div class="about-card">
-        <div class="card-icon">&gt;_</div>
-        <h4>Automatisation</h4>
+        <div class="card-icon" aria-hidden="true">&gt;_</div>
+        <h3>Automatisation</h3>
         <p>Scripts Selenium/JS et Cypress pour réduire les tâches de validation répétitives.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<section id="competences">
-  <p class="section-label">02 / COMPÉTENCES</p>
-  <h2>Stack QA & Outils</h2>
+<!-- Section Compétences -->
+<section id="competences" aria-labelledby="titre-competences">
+  <p class="section-label" aria-hidden="true">02 / COMPÉTENCES</p>
+  <h2 id="titre-competences">Stack QA &amp; Outils</h2>
   <div class="skills-grid">
+
     <div class="skill-card">
-      <h4>✓ Tests & QA</h4>
+      <h3>Tests &amp; QA</h3>
       <div class="skill-item">
-        <div class="skill-row"><span>Tests manuels & fonctionnels</span><span>93%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:93%"></div></div>
+        <div class="skill-row">
+          <span id="skill-tf">Tests manuels &amp; fonctionnels</span>
+          <span aria-hidden="true">93%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-tf">
+          <div class="bar-fill" style="width:93%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Tests de non-régression</span><span>90%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div>
+        <div class="skill-row">
+          <span id="skill-nr">Tests de non-régression</span>
+          <span aria-hidden="true">90%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-nr">
+          <div class="bar-fill" style="width:90%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Tests exploratoires</span><span>88%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div>
+        <div class="skill-row">
+          <span id="skill-ex">Tests exploratoires</span>
+          <span aria-hidden="true">88%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-ex">
+          <div class="bar-fill" style="width:88%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Tests d'API (Postman)</span><span>85%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div>
+        <div class="skill-row">
+          <span id="skill-api">Tests d'API (Postman)</span>
+          <span aria-hidden="true">85%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-api">
+          <div class="bar-fill" style="width:85%"></div>
+        </div>
       </div>
     </div>
+
     <div class="skill-card">
-      <h4>&gt;_ Automatisation</h4>
+      <h3>Automatisation</h3>
       <div class="skill-item">
-        <div class="skill-row"><span>Selenium / JavaScript</span><span>78%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div>
+        <div class="skill-row">
+          <span id="skill-sel">Selenium / JavaScript</span>
+          <span aria-hidden="true">78%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-sel">
+          <div class="bar-fill" style="width:78%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Cypress</span><span>72%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:72%"></div></div>
+        <div class="skill-row">
+          <span id="skill-cy">Cypress</span>
+          <span aria-hidden="true">72%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-cy">
+          <div class="bar-fill" style="width:72%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Playwright</span><span>68%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:68%"></div></div>
+        <div class="skill-row">
+          <span id="skill-pw">Playwright</span>
+          <span aria-hidden="true">68%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-pw">
+          <div class="bar-fill" style="width:68%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Claude Code (IA)</span><span>75%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div>
+        <div class="skill-row">
+          <span id="skill-cc">Claude Code (IA)</span>
+          <span aria-hidden="true">75%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-cc">
+          <div class="bar-fill" style="width:75%"></div>
+        </div>
       </div>
     </div>
+
     <div class="skill-card">
-      <h4>≡ Outils & Suivi</h4>
+      <h3>Outils &amp; Suivi</h3>
       <div class="skill-item">
-        <div class="skill-row"><span>Jira</span><span>92%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div>
+        <div class="skill-row">
+          <span id="skill-jira">Jira</span>
+          <span aria-hidden="true">92%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-jira">
+          <div class="bar-fill" style="width:92%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Xray</span><span>85%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div>
+        <div class="skill-row">
+          <span id="skill-xray">Xray</span>
+          <span aria-hidden="true">85%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-xray">
+          <div class="bar-fill" style="width:85%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Confluence</span><span>88%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div>
+        <div class="skill-row">
+          <span id="skill-conf">Confluence</span>
+          <span aria-hidden="true">88%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-conf">
+          <div class="bar-fill" style="width:88%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Elastic / MixPanel</span><span>70%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div>
+        <div class="skill-row">
+          <span id="skill-el">Elastic / MixPanel</span>
+          <span aria-hidden="true">70%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-el">
+          <div class="bar-fill" style="width:70%"></div>
+        </div>
       </div>
     </div>
+
     <div class="skill-card">
-      <h4>□ Dev & Monitoring</h4>
+      <h3>Dev &amp; Monitoring</h3>
       <div class="skill-item">
-        <div class="skill-row"><span>DevTools (Network / Inspect)</span><span>82%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div>
+        <div class="skill-row">
+          <span id="skill-dt">DevTools (Network / Inspect)</span>
+          <span aria-hidden="true">82%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-dt">
+          <div class="bar-fill" style="width:82%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>Swagger / OpenAPI</span><span>78%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div>
+        <div class="skill-row">
+          <span id="skill-sw">Swagger / OpenAPI</span>
+          <span aria-hidden="true">78%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-sw">
+          <div class="bar-fill" style="width:78%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>JavaScript / HTML / CSS</span><span>74%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:74%"></div></div>
+        <div class="skill-row">
+          <span id="skill-js">JavaScript / HTML / CSS</span>
+          <span aria-hidden="true">74%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-js">
+          <div class="bar-fill" style="width:74%"></div>
+        </div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span>PostgreSQL / Bash</span><span>60%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div>
+        <div class="skill-row">
+          <span id="skill-pg">PostgreSQL / Bash</span>
+          <span aria-hidden="true">60%</span>
+        </div>
+        <div class="bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-labelledby="skill-pg">
+          <div class="bar-fill" style="width:60%"></div>
+        </div>
       </div>
     </div>
+
   </div>
+
   <div class="languages">
-    <p class="section-label">Langues</p>
-    <div class="lang-tags">
-      <span class="lang-tag">Français <span>C2</span></span>
-      <span class="lang-tag">Anglais <span>C2</span></span>
-      <span class="lang-tag">Arabe <span>C2</span></span>
-      <span class="lang-tag">Kabyle <span>C2</span></span>
-      <span class="lang-tag">Espagnol <span>B1</span></span>
-      <span class="lang-tag">Portugais <span>A1</span></span>
-    </div>
+    <p class="section-label" id="langues-label">Langues</p>
+    <ul class="lang-tags" aria-labelledby="langues-label" role="list">
+      <li class="lang-tag">Français <span class="level" aria-label="niveau C2">C2</span></li>
+      <li class="lang-tag">Anglais <span class="level" aria-label="niveau C2">C2</span></li>
+      <li class="lang-tag">Arabe <span class="level" aria-label="niveau C2">C2</span></li>
+      <li class="lang-tag">Kabyle <span class="level" aria-label="niveau C2">C2</span></li>
+      <li class="lang-tag">Espagnol <span class="level" aria-label="niveau B1">B1</span></li>
+      <li class="lang-tag">Portugais <span class="level" aria-label="niveau A1">A1</span></li>
+    </ul>
   </div>
 </section>
 
-<section id="experience">
-  <p class="section-label">03 / EXPÉRIENCE</p>
-  <h2>Parcours professionnel</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
+<section id="experience" aria-labelledby="titre-experience">
+  <p class="section-label" aria-hidden="true">03 / EXPÉRIENCE</p>
+  <h2 id="titre-experience">Parcours professionnel</h2>
+  <ol class="timeline" aria-label="Historique professionnel">
+
+    <li class="timeline-item">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <article class="exp-card">
         <div class="exp-header">
           <h3>Testeur QA</h3>
-          <span class="badge-type">Alternance</span>
+          <span class="badge-type" aria-label="Type de contrat : Alternance">Alternance</span>
         </div>
-        <div class="exp-company">Noelse — Paris</div>
-        <div class="exp-date">Oct. 2025 – Sept. 2026 · Néobanque française.</div>
+        <p class="exp-company">Noelse — Paris</p>
+        <p class="exp-date"><time datetime="2025-10">Oct. 2025</time> – <time datetime="2026-09">Sept. 2026</time> · Néobanque française.</p>
         <ul class="exp-list">
           <li>Exécution de tests manuels (fonctionnels, confirmation, non-régression, exploratoires) et validation des hotfixes en pré-release et release.</li>
           <li>Automatisation de scénarios de tests avec Selenium/JavaScript et Claude Code, réduisant les tâches de validation répétitives.</li>
@@ -220,17 +324,18 @@
           <li>Identification, qualification et documentation des anomalies dans Jira, avec suivi jusqu'à la validation finale.</li>
           <li>Participation aux rituels agiles (daily, planning) et contribution à la documentation qualité : fiches de tests, checklists, cahiers de recette.</li>
         </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
+      </article>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <article class="exp-card">
         <div class="exp-header">
           <h3>Ingénieur Tests et Validation</h3>
-          <span class="badge-type">Stage</span>
+          <span class="badge-type" aria-label="Type de contrat : Stage">Stage</span>
         </div>
-        <div class="exp-company">b:bot — Puteaux</div>
-        <div class="exp-date">Jan. – Juil. 2025 · Automates intelligents pour le recyclage des bouteilles plastiques.</div>
+        <p class="exp-company">b:bot — Puteaux</p>
+        <p class="exp-date"><time datetime="2025-01">Jan. 2025</time> – <time datetime="2025-07">Juil. 2025</time> · Automates intelligents pour le recyclage des bouteilles plastiques.</p>
         <ul class="exp-list">
           <li>Rédaction d'un plan de test et d'exécution avec Xray, puis test de chaque version du logiciel, de l'application et de l'automate.</li>
           <li>Déploiement d'une stratégie complète de tests fonctionnels et techniques avec Postman, Jira, Xray, Swagger.</li>
@@ -238,17 +343,18 @@
           <li>Surveillance proactive des systèmes déployés grâce à Elastic, améliorant la réactivité face aux anomalies.</li>
           <li>Assistance à distance et gestion des incidents techniques via TeamViewer.</li>
         </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
+      </article>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <article class="exp-card">
         <div class="exp-header">
           <h3>Testeur QA</h3>
-          <span class="badge-type">Alternance</span>
+          <span class="badge-type" aria-label="Type de contrat : Alternance">Alternance</span>
         </div>
-        <div class="exp-company">êstorik — Marseille </div>
-        <div class="exp-date">Sept. – Nov. 2024 · Startup tech.</div>
+        <p class="exp-company">êstorik — Marseille</p>
+        <p class="exp-date"><time datetime="2024-09">Sept. 2024</time> – <time datetime="2024-11">Nov. 2024</time> · Startup tech.</p>
         <ul class="exp-list">
           <li>Concevoir, rédiger et maintenir les cas de tests fonctionnels et techniques.</li>
           <li>Identifier, créer et mettre à jour les données de tests.</li>
@@ -257,70 +363,89 @@
           <li>Élaborer des stratégies de tests fonctionnels/techniques (plan de test).</li>
           <li>Participer au daily avec l'équipe technique et la Product Owner.</li>
         </ul>
-      </div>
-    </div>
-  </div>
+      </article>
+    </li>
+
+  </ol>
 </section>
 
-<section id="formation">
-  <p class="section-label">04 / FORMATION</p>
-  <h2>Formations & Certifications</h2>
-  <div class="formation-grid">
-    <div class="form-card">
-      <div class="form-card-header"><span></span><span>2025 – 2026</span></div>
-      <h4>Master Cultures et Métiers du Web</h4>
-      <div class="school">Université Gustave Eiffel</div>
+<!-- Section Formation -->
+<section id="formation" aria-labelledby="titre-formation">
+  <p class="section-label" aria-hidden="true">04 / FORMATION</p>
+  <h2 id="titre-formation">Formations &amp; Certifications</h2>
+  <ul class="formation-grid" role="list">
+    <li class="form-card">
+      <div class="form-card-header"><span></span><span><time datetime="2025">2025</time> – <time datetime="2026">2026</time></span></div>
+      <h3>Master Cultures et Métiers du Web</h3>
+      <p class="school">Université Gustave Eiffel</p>
       <p>Conduite de projets web, HTML/CSS/JS/PHP, séjour d'études en Corée du Sud (Université Dong-Eui, Busan).</p>
-    </div>
-    <div class="form-card">
-      <div class="form-card-header"><span></span><span>2023 – 2025</span></div>
-      <h4>Master Numérique : Enjeux et Technologies</h4>
-      <div class="school">Université Paris 8</div>
+    </li>
+    <li class="form-card">
+      <div class="form-card-header"><span></span><span><time datetime="2023">2023</time> – <time datetime="2025">2025</time></span></div>
+      <h3>Master Numérique : Enjeux et Technologies</h3>
+      <p class="school">Université Paris 8</p>
       <p>Conduite de projets numériques, optimisation de pages Web, conception d'interfaces accessibles et responsives.</p>
-    </div>
-    <div class="form-card">
-      <div class="form-card-header"><span></span><span>2025 – 2029</span></div>
-      <h4>Certification Agile Scrum (RS6099)</h4>
-      <div class="school">Orions</div>
+    </li>
+    <li class="form-card">
+      <div class="form-card-header"><span></span><span><time datetime="2025">2025</time> – <time datetime="2029">2029</time></span></div>
+      <h3>Certification Agile Scrum (RS6099)</h3>
+      <p class="school">Orions</p>
       <p>Conduire et piloter un projet innovant avec des méthodes agiles.</p>
-    </div>
-    <div class="form-card">
-      <div class="form-card-header"><span></span><span>2020 – 2023</span></div>
-      <h4>Licence Littératures & Civilisations Anglophones</h4>
-      <div class="school">Université Paris 8</div>
+    </li>
+    <li class="form-card">
+      <div class="form-card-header"><span></span><span><time datetime="2020">2020</time> – <time datetime="2023">2023</time></span></div>
+      <h3>Licence Littératures &amp; Civilisations Anglophones</h3>
+      <p class="school">Université Paris 8</p>
       <p>Spécialité Traduction — Anglais C2, culture et littérature anglophone.</p>
-    </div>
-    <div class="form-card webdoc">
-      <h4>Webdocumentaire interactif franco-coréen</h4>
+    </li>
+    <li class="form-card webdoc">
+      <h3>Webdocumentaire interactif franco-coréen</h3>
       <p>Projet réalisé lors du séjour d'études à Busan (Université Dong-Eui, Corée du Sud). Webdocumentaire multimédia combinant vidéos, sons et récits culturels.</p>
-      <a href="https://recueil.mastercmw.com" target="_blank">recueil.mastercmw.com ↗</a>
-    </div>
-  </div>
+      <a href="https://recueil.mastercmw.com" target="_blank" rel="noopener noreferrer"
+         aria-label="Voir le webdocumentaire franco-coréen (nouvelle fenêtre)">recueil.mastercmw.com ↗</a>
+    </li>
+  </ul>
 </section>
 
-
-<section id="contact">
-  <p class="section-label">05 / CONTACT</p>
-  <h2>Travaillons ensemble</h2>
+<!-- Section Contact -->
+<section id="contact" aria-labelledby="titre-contact">
+  <p class="section-label" aria-hidden="true">05 / CONTACT</p>
+  <h2 id="titre-contact">Travaillons ensemble</h2>
   <p class="contact-desc">Disponible dès septembre pour un CDI en QA. N'hésitez pas à me contacter par email ou LinkedIn.</p>
   <div class="contact-cards">
-   <a href="mailto:tighidetayoub98@outlook.fr" class="contact-card">
-  <div class="icon">✉</div>
-  <div class="label">Email</div>
-  <div class="value">tighidetayoub98@outlook.fr</div>
-</a>
-    <a href="https://www.linkedin.com/in/ayoub-tighidet/" class="contact-card" target="_blank">
-    <div class="icon">in</div>
-    <div class="label">LinkedIn</div>
-    <div class="value">ayoub-tighidet</div>
-</a>
+    <a href="mailto:tighidetayoub98@outlook.fr" class="contact-card"
+       aria-label="Envoyer un email à tighidetayoub98@outlook.fr">
+      <div class="icon" aria-hidden="true">✉</div>
+      <div class="label">Email</div>
+      <div class="value">tighidetayoub98@outlook.fr</div>
+    </a>
+    <a href="https://www.linkedin.com/in/ayoub-tighidet/" class="contact-card"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Profil LinkedIn d'Ayoub Tighidet (nouvelle fenêtre)">
+      <div class="icon" aria-hidden="true">in</div>
+      <div class="label">LinkedIn</div>
+      <div class="value">ayoub-tighidet</div>
+    </a>
   </div>
-  <button class="btn-send">✉ Envoyer un message</button>
+  <button class="btn-send"
+          onclick="window.location.href='mailto:tighidetayoub98@outlook.fr?subject=Prise de contact – Portfolio'"
+          aria-label="Ouvrir le client mail pour envoyer un message">
+    <span aria-hidden="true">✉</span> Envoyer un message
+  </button>
 </section>
 
-<footer>
-  &lt;AYOUB TIGHIDET /&gt; · Testeur QA · 2026
+<section id="mentions-legales" aria-labelledby="titre-mentions">
+  <h2 id="titre-mentions">Mentions légales</h2>
+  <p><strong>Responsable de publication :</strong> Ayoub Tighidet</p>
+  <p><strong>Hébergeur :</strong> GitHub Pages — GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA</p>
+  <p><strong>Contact :</strong> <a href="mailto:tighidetayoub98@outlook.fr">tighidetayoub98@outlook.fr</a></p>
+  <p><strong>Utilisation de l'IA :</strong> Certaines parties du code ont été générées ou assistées par Claude (Anthropic). Les sections concernées sont indiquées en commentaire dans le code source.</p>
+</section>
+
+<footer role="contentinfo">
+  <p>&lt;AYOUB TIGHIDET /&gt; · Testeur QA · 2026</p>
 </footer>
+
 <script src="script.js" defer></script>
 </body>
 </html>

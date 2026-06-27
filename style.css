@@ -128,7 +128,6 @@ nav.scrolled {
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
-/* ── Lang switcher ── */
 .lang-switcher {
   display: flex;
   align-items: center;
@@ -154,7 +153,6 @@ nav.scrolled {
   border: 1px solid var(--teal-border);
 }
 
-/* ── Sections ── */
 section {
   padding: 6.25rem;
   max-width: var(--max-width);
@@ -194,7 +192,6 @@ h2 {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ── Hero ── */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -342,7 +339,7 @@ h1 span { color: var(--teal); }
 .json-val  { color: #ffa657; }
 .json-bool { color: var(--teal); }
 
-/* ── À propos ── */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,7 +402,6 @@ h1 span { color: var(--teal); }
 
 .about-card p { color: var(--muted); font-size: var(--text-sm); line-height: 1.5; }
 
-/* ── Compétences ── */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -578,7 +574,6 @@ h1 span { color: var(--teal); }
   font-weight: 700;
 }
 
-/* ── Formation ── */
 .formation-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -628,7 +623,7 @@ h1 span { color: var(--teal); }
 
 .webdoc a:hover { opacity: 0.75; }
 
-/* ── Contact ── */
+
 #contact {
   text-align: center;
   padding-bottom: 7.5rem;
@@ -703,7 +698,7 @@ h1 span { color: var(--teal); }
   transform: translateY(-2px);
 }
 
-/* ── Footer ── */
+
 footer {
   border-top: 1px solid var(--border);
   text-align: center;
@@ -712,7 +707,6 @@ footer {
   font-size: var(--text-sm);
 }
 
-/* ── Responsive ── */
 @media (max-width: 56.25rem) {
   nav { padding: 0 var(--space-lg); }
   .nav-links { display: none; }
